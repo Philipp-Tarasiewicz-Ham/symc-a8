@@ -3,9 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { TopLevelCRoutingModule } from './top-level-c-routing.module';
 import { TopLevelCHomeComponent } from './top-level-c-home/top-level-c-home.component';
+import { TopLevelCOneComponent } from './top-level-c-one/top-level-c-one.component';
+import { TopLevelCTwoComponent } from './top-level-c-two/top-level-c-two.component';
+import { TopLevelCThreeComponent } from './top-level-c-three/top-level-c-three.component';
 
 @NgModule({
-  declarations: [TopLevelCHomeComponent],
+  declarations: [TopLevelCHomeComponent, TopLevelCOneComponent, TopLevelCTwoComponent, TopLevelCThreeComponent],
   imports: [
     CommonModule,
     TopLevelCRoutingModule
