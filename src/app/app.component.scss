@@ -1,0 +1,19 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+.symc-nav-link {
+  display: inline-block;
+  border: $secondary solid 1px;
+  border-radius: 4px;
+  padding: 0.2rem;
+  text-decoration: none;
+
+  &:not(:first-child) {
+    margin-left: 0.4rem;
+  }
+
+  &.active {
+    background: $secondary;
+    color: $white;
+  }
+}
