@@ -7,6 +7,7 @@ import { TopLevelBThreeComponent } from './top-level-b-three/top-level-b-three.c
 
 const routes: Routes = [{
   path: '', component: TopLevelBHomeComponent, children: [
+    { path: '', redirectTo: 'one', pathMatch: 'full' },
     { path: 'one', component: TopLevelBOneComponent },
     { path: 'two', component: TopLevelBTwoComponent },
     { path: 'three', component: TopLevelBThreeComponent }
