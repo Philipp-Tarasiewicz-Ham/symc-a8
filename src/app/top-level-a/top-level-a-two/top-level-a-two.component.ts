@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-top-level-a-two',
@@ -7,12 +7,12 @@ import {FormControl, FormGroup} from '@angular/forms';
   styleUrls: ['./top-level-a-two.component.scss']
 })
 export class TopLevelATwoComponent implements OnInit {
-  myForm = new FormGroup({
-    firstName: new FormControl('foo'),
-    lastName: new FormControl('bar')
+  myForm = this.formBuilder.group({
+    firstName: ['', Validators.required],
+    lastName: ['']
   });
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
   }
