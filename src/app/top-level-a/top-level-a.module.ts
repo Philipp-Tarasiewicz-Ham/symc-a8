@@ -7,12 +7,14 @@ import { TopLevelAOneComponent } from './top-level-a-one/top-level-a-one.compone
 import { TopLevelATwoComponent } from './top-level-a-two/top-level-a-two.component';
 import { TopLevelAThreeComponent } from './top-level-a-three/top-level-a-three.component';
 import { ExampleComponent } from './top-level-a-one/example/example.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [TopLevelAHomeComponent, TopLevelAOneComponent, TopLevelATwoComponent, TopLevelAThreeComponent, ExampleComponent],
   imports: [
     CommonModule,
-    TopLevelARoutingModule
+    TopLevelARoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class TopLevelAModule { }

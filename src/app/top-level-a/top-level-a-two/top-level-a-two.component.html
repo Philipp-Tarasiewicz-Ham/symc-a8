@@ -1,3 +1,15 @@
 <p>
   top-level-a-two works!
 </p>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+  <button type="submit" [disabled]="!myForm.valid">Submit</button>
+</form>
