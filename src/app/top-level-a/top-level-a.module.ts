@@ -8,9 +8,13 @@ import { TopLevelATwoComponent } from './top-level-a-two/top-level-a-two.compone
 import { TopLevelAThreeComponent } from './top-level-a-three/top-level-a-three.component';
 import { ExampleComponent } from './top-level-a-one/example/example.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { CasbRoutedWizardComponent } from './top-level-a-three/casb-routed-wizard/casb-routed-wizard.component';
 
 @NgModule({
-  declarations: [TopLevelAHomeComponent, TopLevelAOneComponent, TopLevelATwoComponent, TopLevelAThreeComponent, ExampleComponent],
+  declarations: [
+    TopLevelAHomeComponent, TopLevelAOneComponent, TopLevelATwoComponent, TopLevelAThreeComponent, ExampleComponent,
+    CasbRoutedWizardComponent
+  ],
   imports: [
     CommonModule,
     TopLevelARoutingModule,
