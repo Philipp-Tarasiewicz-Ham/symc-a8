@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-casb-routed-wizard',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CasbRoutedWizardComponent implements OnInit {
 
-  constructor() {
-    console.log('This is CasbRoutedWizardComponent');
+  constructor(private router: Router) {
+    console.log('This is CasbRoutedWizardComponent', router);
   }
 
   ngOnInit() {
