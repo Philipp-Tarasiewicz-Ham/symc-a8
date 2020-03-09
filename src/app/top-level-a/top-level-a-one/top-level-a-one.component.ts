@@ -7,7 +7,7 @@ import {DataService} from '../../_services/data.service';
   styleUrls: ['./top-level-a-one.component.scss']
 })
 export class TopLevelAOneComponent implements OnInit {
-  private exampleData: string[];
+  exampleData: string[];
 
   constructor(private dataService: DataService) {
     this.exampleData = dataService.getData();
