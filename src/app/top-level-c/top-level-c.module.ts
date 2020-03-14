@@ -8,8 +8,8 @@ import { TopLevelCOneComponent } from './top-level-c-one/top-level-c-one.compone
 import { TopLevelCTwoComponent } from './top-level-c-two/top-level-c-two.component';
 import { TopLevelCThreeComponent } from './top-level-c-three/top-level-c-three.component';
 
-import { reducer } from './top-level-c-one/store/top-level-c-one.reducers';
-import { CONFIG } from './top-level-c-one/store/top-level-c-one.config';
+import { reducer } from './store/top-level-c-one.reducers';
+import { CONFIG } from './store/top-level-c-one.config';
 
 @NgModule({
   declarations: [TopLevelCHomeComponent, TopLevelCOneComponent, TopLevelCTwoComponent, TopLevelCThreeComponent],
