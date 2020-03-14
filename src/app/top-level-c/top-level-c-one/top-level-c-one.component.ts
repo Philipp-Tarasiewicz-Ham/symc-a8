@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';
-import {createFeatureSelector, select, Store} from '@ngrx/store';
-import { CONFIG } from '../store/top-level-c-one.config';
+import { Observable } from 'rxjs';
+import {select, Store} from '@ngrx/store';
 import { increment, decrement, reset } from '../store/top-level-c-one.actions';
-import {selectFeatureCount} from '../store/top-level-c-one.selectors';
+import { selectFeatureCount } from '../store/top-level-c-one.selectors';
 
 @Component({
   selector: 'app-top-level-c-one',
