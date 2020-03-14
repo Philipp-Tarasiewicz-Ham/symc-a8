@@ -1,4 +1,4 @@
 export const CONFIG = {
-  KEY: 'topLevelCOne',
-  NAME: 'Top Level C One'
+  KEY: 'topLevelC',
+  NAME: 'Top Level C'
 };
