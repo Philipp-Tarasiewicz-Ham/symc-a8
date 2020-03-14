@@ -10,13 +10,16 @@ import { TopLevelCThreeComponent } from './top-level-c-three/top-level-c-three.c
 
 import { reducer } from './store/top-level-c-one.reducers';
 import { CONFIG } from './store/top-level-c-one.config';
+import {EffectsModule} from '@ngrx/effects';
+import {TopLevelCOneEffects} from './store/top-level-c-one.effects';
 
 @NgModule({
   declarations: [TopLevelCHomeComponent, TopLevelCOneComponent, TopLevelCTwoComponent, TopLevelCThreeComponent],
   imports: [
     CommonModule,
     TopLevelCRoutingModule,
-    StoreModule.forFeature(CONFIG.KEY, reducer)
+    StoreModule.forFeature(CONFIG.KEY, reducer),
+    EffectsModule.forFeature([TopLevelCOneEffects])
   ]
 })
 export class TopLevelCModule { }

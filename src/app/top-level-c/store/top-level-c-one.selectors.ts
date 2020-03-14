@@ -4,7 +4,7 @@ import {TopLevelCState} from './top-level-c-one.reducers';
 
 export const selectFeature = createFeatureSelector<TopLevelCState>(CONFIG.KEY);
 
-export const selectFeatureCount = createSelector(
+export const selectFeatureTodos = createSelector(
   selectFeature,
-  (state) => state.count
+  (state) => state.todos
 );

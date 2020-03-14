@@ -1,6 +1,5 @@
 import { CONFIG } from './top-level-c-one.config';
-import { createAction } from '@ngrx/store';
+import {createAction, props} from '@ngrx/store';
 
-export const increment = createAction(`[${CONFIG.NAME}] Increment`);
-export const decrement = createAction(`[${CONFIG.NAME}] Decrement`);
-export const reset = createAction(`[${CONFIG.NAME}] Reset`);
+export const loadTodos = createAction(`[${CONFIG.NAME}] Load Todos`);
+export const loadTodosSuccess = createAction(`[${CONFIG.NAME}] Load Todos Success`, props<{ payload }>());

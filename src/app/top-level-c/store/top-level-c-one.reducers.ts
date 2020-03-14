@@ -1,19 +1,17 @@
 import { createReducer, on } from '@ngrx/store';
-import { increment, decrement, reset } from './top-level-c-one.actions';
+import { loadTodosSuccess } from './top-level-c-one.actions';
 
 export interface TopLevelCState {
-  count: number;
+  todos: any[];
 }
 
 export const initialState: TopLevelCState = {
-  count: 0
+  todos: []
 };
 
 const counterReducer = createReducer(
   initialState,
-  on(increment, state => ({ count: state.count + 1 })),
-  on(decrement, state => ({ count: state.count - 1 })),
-  on(reset, state => ({ count: 0 })),
+  on(loadTodosSuccess, (state, { payload }) => ({ todos: payload })),
 );
 
 export function reducer(action, state) {
