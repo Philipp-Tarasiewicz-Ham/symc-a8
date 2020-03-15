@@ -1,19 +1,41 @@
-import { createReducer, on } from '@ngrx/store';
-import { loadTodosSuccess } from './top-level-c-one.actions';
+import { createReducer } from '@ngrx/store';
+import {createFormGroupState, FormGroupState, onNgrxForms, updateGroup, validate, wrapReducerWithFormStateUpdate} from 'ngrx-forms';
+import {required} from 'ngrx-forms/validation';
+
+export interface MyFormState {
+  firstName: string;
+  lastName: string;
+  age: number;
+}
 
 export interface TopLevelCState {
-  todos: any[];
+  myForm: FormGroupState<MyFormState>;
 }
 
-export const initialState: TopLevelCState = {
-  todos: []
+const FORM_ID = 'topLevelCForm';
+
+export const initialFormState = createFormGroupState<MyFormState>(FORM_ID, {
+  firstName: '',
+  lastName: '',
+  age: 18
+});
+
+const initialState: TopLevelCState = {
+  myForm: initialFormState
 };
 
-const counterReducer = createReducer(
+const validateMyForm = updateGroup<MyFormState>({
+  firstName: validate(required),
+  lastName: validate(required)
+});
+
+const formReducer = createReducer(
   initialState,
-  on(loadTodosSuccess, (state, { payload }) => ({ todos: payload })),
+  onNgrxForms(),
 );
 
-export function reducer(action, state) {
-  return counterReducer(action, state);
-}
+export const reducer = wrapReducerWithFormStateUpdate(
+  formReducer,
+    state => state.myForm,
+  validateMyForm
+);

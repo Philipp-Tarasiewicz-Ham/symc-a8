@@ -12,12 +12,14 @@ import { reducer } from './store/top-level-c-one.reducers';
 import { CONFIG } from './store/top-level-c-one.config';
 import {EffectsModule} from '@ngrx/effects';
 import {TopLevelCOneEffects} from './store/top-level-c-one.effects';
+import {NgrxFormsModule} from 'ngrx-forms';
 
 @NgModule({
   declarations: [TopLevelCHomeComponent, TopLevelCOneComponent, TopLevelCTwoComponent, TopLevelCThreeComponent],
   imports: [
     CommonModule,
     TopLevelCRoutingModule,
+    NgrxFormsModule,
     StoreModule.forFeature(CONFIG.KEY, reducer),
     EffectsModule.forFeature([TopLevelCOneEffects])
   ]

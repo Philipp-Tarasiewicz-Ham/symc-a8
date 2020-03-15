@@ -1,7 +1,9 @@
 <p>
   top-level-c-one works!
 </p>
-<button (click)="loadTodos()">Load TODOs</button>
-<div *ngFor="let todo of todos$ | async">
-  {{ todo.title }}
-</div>
+<form novalidate [ngrxFormState]="(formState$ | async)">
+  <input type="text" [ngrxFormControlState]="(formState$ | async).controls.firstName" placeholder="First Name">
+  <input type="text" [ngrxFormControlState]="(formState$ | async).controls.lastName" placeholder="Last Name">
+  <input type="number" [ngrxFormControlState]="(formState$ | async).controls.age">
+</form>
+<p>Is this form valid? {{ (formState$ | async).isValid }}</p>

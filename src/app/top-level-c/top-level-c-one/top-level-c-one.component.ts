@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import {select, Store} from '@ngrx/store';
-import { loadTodos } from '../store/top-level-c-one.actions';
-import { selectFeatureTodos } from '../store/top-level-c-one.selectors';
+import {selectFeatureFormState} from '../store/top-level-c-one.selectors';
+import {FormGroupState} from 'ngrx-forms';
+import {MyFormState} from '../store/top-level-c-one.reducers';
 
 @Component({
   selector: 'app-top-level-c-one',
@@ -10,16 +11,12 @@ import { selectFeatureTodos } from '../store/top-level-c-one.selectors';
   styleUrls: ['./top-level-c-one.component.scss']
 })
 export class TopLevelCOneComponent implements OnInit {
-  todos$: Observable<any[]>;
+  formState$: Observable<FormGroupState<MyFormState>>;
 
   constructor(private store: Store) {
-    this.todos$ = store.pipe(select(selectFeatureTodos));
+    this.formState$ = store.pipe(select(selectFeatureFormState));
   }
 
   ngOnInit() {
-  }
-
-  loadTodos() {
-    this.store.dispatch(loadTodos());
   }
 }
