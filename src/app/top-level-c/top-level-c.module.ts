@@ -11,7 +11,6 @@ import { TopLevelCThreeComponent } from './top-level-c-three/top-level-c-three.c
 import { reducer } from './store/top-level-c-one.reducers';
 import { CONFIG } from './store/top-level-c-one.config';
 import {EffectsModule} from '@ngrx/effects';
-import {TopLevelCOneEffects} from './store/top-level-c-one.effects';
 import {NgrxFormsModule} from 'ngrx-forms';
 
 @NgModule({
@@ -20,8 +19,7 @@ import {NgrxFormsModule} from 'ngrx-forms';
     CommonModule,
     TopLevelCRoutingModule,
     NgrxFormsModule,
-    StoreModule.forFeature(CONFIG.KEY, reducer),
-    EffectsModule.forFeature([TopLevelCOneEffects])
+    StoreModule.forFeature(CONFIG.KEY, reducer)
   ]
 })
 export class TopLevelCModule { }
